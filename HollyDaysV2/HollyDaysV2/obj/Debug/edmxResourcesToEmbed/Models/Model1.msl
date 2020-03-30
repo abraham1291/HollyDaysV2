@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hollydaysModelStoreContainer" CdmEntityContainer="hollydaysEntities">
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="hollydaysModel.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Idsap_padre" ColumnName="Idsap_padre" />
+          <ScalarProperty Name="url_poliza" ColumnName="url_poliza" />
+          <ScalarProperty Name="ultimo_desconecte" ColumnName="ultimo_desconecte" />
+          <ScalarProperty Name="dias_disponibles" ColumnName="dias_disponibles" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="banda" ColumnName="banda" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdSAP" ColumnName="IdSAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="solicitudes">
+      <EntityTypeMapping TypeName="hollydaysModel.solicitudes">
+        <MappingFragment StoreEntitySet="solicitudes">
+          <ScalarProperty Name="observacion_aprobador" ColumnName="observacion_aprobador" />
+          <ScalarProperty Name="fecha_aprobacion" ColumnName="fecha_aprobacion" />
+          <ScalarProperty Name="id_sap_aprobador" ColumnName="id_sap_aprobador" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="observaciones_solicitante" ColumnName="observaciones_solicitante" />
+          <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_solicitud" ColumnName="fecha_solicitud" />
+          <ScalarProperty Name="tipo_solicitud" ColumnName="tipo_solicitud" />
+          <ScalarProperty Name="is_sap" ColumnName="is_sap" />
+          <ScalarProperty Name="id_solicitud" ColumnName="id_solicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="hollydaysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="IdSAP" />
+          </Key>
+          <Property Name="IdSAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="estatus" Type="int" />
+          <Property Name="area" Type="varchar" MaxLength="50" />
+          <Property Name="banda" Type="nchar" MaxLength="10" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="dias_disponibles" Type="int" />
+          <Property Name="ultimo_desconecte" Type="date" />
+          <Property Name="url_poliza" Type="nchar" MaxLength="10" />
+          <Property Name="Idsap_padre" Type="int" />
+        </EntityType>
+        <EntityType Name="solicitudes">
+          <Key>
+            <PropertyRef Name="id_solicitud" />
+          </Key>
+          <Property Name="id_solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="is_sap" Type="int" />
+          <Property Name="tipo_solicitud" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_solicitud" Type="date" />
+          <Property Name="fecha_inicio" Type="date" />
+          <Property Name="fecha_fin" Type="date" />
+          <Property Name="observaciones_solicitante" Type="varchar" MaxLength="200" />
+          <Property Name="estatus" Type="int" />
+          <Property Name="id_sap_aprobador" Type="int" />
+          <Property Name="fecha_aprobacion" Type="date" />
+          <Property Name="observacion_aprobador" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="hollydaysModelStoreContainer">
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="solicitudes" EntityType="Self.solicitudes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hollydaysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="hollydaysEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Empleados" EntityType="hollydaysModel.Empleados" />
+          <EntitySet Name="solicitudes" EntityType="hollydaysModel.solicitudes" />
+        </EntityContainer>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="IdSAP" />
+          </Key>
+          <Property Name="IdSAP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estatus" Type="Int32" />
+          <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="banda" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="dias_disponibles" Type="Int32" />
+          <Property Name="ultimo_desconecte" Type="DateTime" Precision="0" />
+          <Property Name="url_poliza" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Idsap_padre" Type="Int32" />
+        </EntityType>
+        <EntityType Name="solicitudes">
+          <Key>
+            <PropertyRef Name="id_solicitud" />
+          </Key>
+          <Property Name="id_solicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="is_sap" Type="Int32" />
+          <Property Name="tipo_solicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_solicitud" Type="DateTime" Precision="0" />
+          <Property Name="fecha_inicio" Type="DateTime" Precision="0" />
+          <Property Name="fecha_fin" Type="DateTime" Precision="0" />
+          <Property Name="observaciones_solicitante" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="estatus" Type="Int32" />
+          <Property Name="id_sap_aprobador" Type="Int32" />
+          <Property Name="fecha_aprobacion" Type="DateTime" Precision="0" />
+          <Property Name="observacion_aprobador" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hollydaysModelStoreContainer" CdmEntityContainer="hollydaysEntities">
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="hollydaysModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="Idsap_padre" ColumnName="Idsap_padre" />
+                <ScalarProperty Name="url_poliza" ColumnName="url_poliza" />
+                <ScalarProperty Name="ultimo_desconecte" ColumnName="ultimo_desconecte" />
+                <ScalarProperty Name="dias_disponibles" ColumnName="dias_disponibles" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="banda" ColumnName="banda" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdSAP" ColumnName="IdSAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="solicitudes">
+            <EntityTypeMapping TypeName="hollydaysModel.solicitudes">
+              <MappingFragment StoreEntitySet="solicitudes">
+                <ScalarProperty Name="observacion_aprobador" ColumnName="observacion_aprobador" />
+                <ScalarProperty Name="fecha_aprobacion" ColumnName="fecha_aprobacion" />
+                <ScalarProperty Name="id_sap_aprobador" ColumnName="id_sap_aprobador" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="observaciones_solicitante" ColumnName="observaciones_solicitante" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="fecha_solicitud" ColumnName="fecha_solicitud" />
+                <ScalarProperty Name="tipo_solicitud" ColumnName="tipo_solicitud" />
+                <ScalarProperty Name="is_sap" ColumnName="is_sap" />
+                <ScalarProperty Name="id_solicitud" ColumnName="id_solicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

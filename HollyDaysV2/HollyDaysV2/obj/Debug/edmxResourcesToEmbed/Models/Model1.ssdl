@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hollydaysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdSAP" />
+    </Key>
+    <Property Name="IdSAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="contrasena" Type="varchar" MaxLength="50" />
+    <Property Name="estatus" Type="int" />
+    <Property Name="area" Type="varchar" MaxLength="50" />
+    <Property Name="banda" Type="nchar" MaxLength="10" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="dias_disponibles" Type="int" />
+    <Property Name="ultimo_desconecte" Type="date" />
+    <Property Name="url_poliza" Type="nchar" MaxLength="10" />
+    <Property Name="Idsap_padre" Type="int" />
+  </EntityType>
+  <EntityType Name="solicitudes">
+    <Key>
+      <PropertyRef Name="id_solicitud" />
+    </Key>
+    <Property Name="id_solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="is_sap" Type="int" />
+    <Property Name="tipo_solicitud" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_solicitud" Type="date" />
+    <Property Name="fecha_inicio" Type="date" />
+    <Property Name="fecha_fin" Type="date" />
+    <Property Name="observaciones_solicitante" Type="varchar" MaxLength="200" />
+    <Property Name="estatus" Type="int" />
+    <Property Name="id_sap_aprobador" Type="int" />
+    <Property Name="fecha_aprobacion" Type="date" />
+    <Property Name="observacion_aprobador" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="hollydaysModelStoreContainer">
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="solicitudes" EntityType="Self.solicitudes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

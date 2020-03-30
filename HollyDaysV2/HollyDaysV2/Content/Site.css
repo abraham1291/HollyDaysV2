@@ -1,0 +1,46 @@
+﻿
+/* Set width on the form input elements since they're 100% wide by default */
+
+.bodyFondo {
+    background-image: url('Resources/home-background.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.navbartop {
+    background-image: url('Resources/bar_01.png');
+    font-family: Gotham;
+}
+
+.navtext{
+    color:white;
+}
+
+.fondoindex {
+    background-image: url('Resources/doodle-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: Gotham;
+}
+
+.btn-desconectate {
+    color: #fff;
+    background-color: #821c60;
+    border-color: #821c60;
+    font-family: Gotham;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url('Resources/Gotham-Font/GothamBook.ttf');
+}
+
+@font-face {
+    font-family: Gotham;
+    font-weight: bold;
+    src: url('Resources/Gotham-Font/GothamBold.ttf');
+}
